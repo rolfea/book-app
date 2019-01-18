@@ -6,10 +6,16 @@ function search() {
     fetchVolumes(searchText);
 }
 
+function trimData(data) {
+    console.log(data);
+    return data.map( b => b.volumeInfo);
+    
+}
+
 function fetchVolumes(searchText) {
     fetch(constructVolumesRequest(searchText))
         .then(r => r.json())
-        .then(d => console.log(d));
+        .then(d => console.log(trimData(d.items)));
 }
 
 function constructVolumesRequest(queryString) {
