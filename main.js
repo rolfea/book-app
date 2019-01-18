@@ -5,17 +5,19 @@ function buildBookDisplay(searchResult) {
     const publisher = searchResult.publisher === undefined ? "Unavailable" : searchResult.publisher;  
     return `Author: ${searchResult.authors}
             Title: ${searchResult.title}
-            Publishing Company: ${publisher}
-            Image: ${searchResult.imageLinks.smallThumbnail}`;
+            Publishing Company: ${publisher}`;
 }
 
 function displaySearchResults(searchResults) {
     const listParent = document.querySelector('#search-results');            
 
     searchResults.forEach(sr => {
-        const li = document.createElement("li");        
+        const li = document.createElement("li");
+        const img = document.createElement("img");        
         li.innerText = buildBookDisplay(sr);
+        img.setAttribute("src", sr.imageLinks.smallThumbnail); 
         listParent.appendChild(li);
+        listParent.appendChild(img);
     })
 }
 
