@@ -6,7 +6,7 @@ function displaySearchResults(searchResults) {
 
     searchResults.forEach(sr => {
         const li = document.createElement("li");
-        li.innerText = `Author: ${sr.authors} Title: ${sr.title} Publishing Company: ${sr.publisher} Image:`
+        li.innerText = `Author: ${sr.authors} Title: ${sr.title} Publishing Company: ${sr.publisher} Image: ${sr.imageLinks.smallThumbnail}`
         listParent.appendChild(li);
     })
 }
@@ -27,7 +27,15 @@ function fetchVolumes(searchText) {
         .then(td => displaySearchResults(td));
 }
 
+function clearResults() {
+    const listParent = document.querySelector('ul');
+    while (listParent.firstChild) {
+        listParent.removeChild(listParent.firstChild);
+    }    
+}
+
 function search() {
+    clearResults();
     const searchText = document.querySelector('input').value;
     fetchVolumes(searchText);
 }
