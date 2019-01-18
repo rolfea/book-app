@@ -1,12 +1,20 @@
 const BOOKS_KEY = "AIzaSyB9a6wUkQFgzuSu_4rEr0wX2-UL3GQgxB4";
 const baseURL = "https://www.googleapis.com/books/v1/";
 
+function buildBookDisplay(searchResult) {    
+    const publisher = searchResult.publisher === undefined ? "Unavailable" : searchResult.publisher;  
+    return `Author: ${searchResult.authors}
+            Title: ${searchResult.title}
+            Publishing Company: ${publisher}
+            Image: ${searchResult.imageLinks.smallThumbnail}`;
+}
+
 function displaySearchResults(searchResults) {
     const listParent = document.querySelector('#search-results');            
 
     searchResults.forEach(sr => {
-        const li = document.createElement("li");
-        li.innerText = `Author: ${sr.authors} Title: ${sr.title} Publishing Company: ${sr.publisher} Image: ${sr.imageLinks.smallThumbnail}`
+        const li = document.createElement("li");        
+        li.innerText = buildBookDisplay(sr);
         listParent.appendChild(li);
     })
 }
