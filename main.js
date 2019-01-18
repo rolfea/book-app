@@ -12,12 +12,22 @@ function displaySearchResults(searchResults) {
     const listParent = document.querySelector('#search-results');            
 
     searchResults.forEach(sr => {
-        const li = document.createElement("li");
-        const img = document.createElement("img");        
-        li.innerText = buildBookDisplay(sr);
-        img.setAttribute("src", sr.imageLinks.smallThumbnail); 
-        listParent.appendChild(li);
-        listParent.appendChild(img);
+        const book = document.createElement("li");
+        const bookData = document.createElement("p");
+        const emptyParagraph = document.createElement("p");
+        const bookImage = document.createElement("img");
+        const learnMore = document.createElement("a");
+
+        bookData.innerText = buildBookDisplay(sr);
+        bookImage.setAttribute("src", sr.imageLinks.smallThumbnail); 
+        learnMore.setAttribute("href", sr.infoLink)
+        learnMore.innerText = "Learn More";
+
+        book.appendChild(bookData);
+        book.appendChild(bookImage);
+        book.appendChild(emptyParagraph);
+        book.appendChild(learnMore);                
+        listParent.appendChild(book);
     })
 }
 
