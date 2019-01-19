@@ -20,10 +20,15 @@ I am following a general process of planning, generating distinct pieces of work
 
 ## Design
 
-I will build a React Application whose "back end" is the Google API. Since there specifications don't mention any need to store user data, we can begin by creating an interface over this API that meets the above requirements and not worry about crafting a backend. By using React in a modular way, we can always build a backend at a later point it we want to store user data, etc.
+I originally thought to build a React Application whose "back end" is the Google API. However, after completing an initial spike of the work using vanilla JS, I didn't find a good reason to add a framework, so I'm going to keep things simple and submit this initial.
+
+Since the specifications don't mention any need to store user data, we can begin by creating an interface over this API that meets the above requirements and not worry about crafting a backend.
 
 ## Authentication
 
-We have the option of using an API Key or OAuth2 to authenticate our requests to the API. Google requres OAuth2 if we need authorization (user data requests) and since this will be public facing, I use the API key to keep things a little simpler. This decision implies a little tech debt if we decide to add more features in the future, but I think it's an acceptable trade off to avoid any additional complexities with OAuth for the time being.
+The Get and List methods sent to the Volumes endpoint of the API do not require authentication to use. If we want to add features that require authentication, we have the option of using an API Key or OAuth2 to authenticate our requests to the API. Google requires OAuth2 if we need authorization (user data requests) and since this will be public facing, I will use the API key to keep things a little simpler. This decision implies a little tech debt if we decide to add more features in the future, but I think it's an acceptable trade off to avoid any additional complexities with OAuth for the time being.
 
-I turned on the Google Books API on my account and got a key, which is here: https://console.developers.google.com/apis/credentials
+## Deploy
+
+## Testing
+
