@@ -1,5 +1,7 @@
 # Books API App
 
+Visit [here](https://rolfe-books-app.herokuapp.com/) to see the deployed version of this app.
+
 ## Requirements
 
 Create an application that allows you to use the Google Books API to search for books, and deploy it somewhere accessible through a web browser.
@@ -30,5 +32,18 @@ The Get and List methods sent to the Volumes endpoint of the API do not require 
 
 ## Deploy
 
+I am deploying this to Heroku. Since there isn't any backend stack to this at the moment (ie. Node, Ruby, etc.) I used a slightly hackey approach of creating a php file to utilize the Heroku PHP buildpack. I don't love this, but it got me up and running without needing to bring in any extra libraries, so I think it's acceptable for now.
+
 ## Testing
 
+## Additional Features
+
+* When I click the "Additional Info" link, Then the link opens a new tab
+
+* The Content should be centered on the page
+
+* When I enter a search term and press the enter key on my keyboard, then the search executes
+
+* Build unit tests around the JS
+
+* Make the JS more modular to improve testability and readability
