@@ -20,7 +20,8 @@ function displaySearchResults(searchResults) {
 
         bookData.innerText = buildBookDisplay(sr);
         bookImage.setAttribute("src", sr.imageLinks.smallThumbnail); 
-        learnMore.setAttribute("href", sr.infoLink)
+        learnMore.setAttribute("href", sr.infoLink);
+        learnMore.setAttribute("target", "_blank");
         learnMore.innerText = "Learn More";
 
         book.appendChild(bookData);

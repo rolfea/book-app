@@ -47,3 +47,11 @@ I am deploying this to Heroku. Since there isn't any backend stack to this at th
 * Build unit tests around the JS
 
 * Make the JS more modular to improve testability and readability
+
+* When my search returns no  results, Then a message informs me of this
+
+* When I execute a search, the UI reinforces this behavior and makes it clear that I've taken the correct steps
+
+* When I search, I can select between author and title searches
+
+* Responsive Design considerations as I add styling
