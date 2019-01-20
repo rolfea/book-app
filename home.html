@@ -4,16 +4,19 @@
     <meta charset="utf-8" />    
     <title>Books App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet"></link>
     <script src="main.js"></script>
 </head>
 <body>
     <h1>Books App Spike</h1>
 
-    <h2>Enter your search term:</h2>
-    <input type="text">
-    <button onclick="search()">Search</button>
-
-    <h3>Results:</h3>
-    <ul id="search-results"></ul>
+    <div id="main-app">    
+        <h2>Enter your search term: </h2>
+        <input type="text">
+        <button onclick="search()">Search</button>                    
+    
+        <h3 id="results-header"></h3>
+        <ul></ul>    
+    </div>    
 </body>
 </html>

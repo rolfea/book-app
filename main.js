@@ -1,6 +1,8 @@
 const BOOKS_KEY = "AIzaSyB9a6wUkQFgzuSu_4rEr0wX2-UL3GQgxB4";
 const baseURL = "https://www.googleapis.com/books/v1/";
 
+
+
 function buildBookDisplay(searchResult) {    
     const publisher = searchResult.publisher === undefined ? "Unavailable" : searchResult.publisher;  
     return `Author: ${searchResult.authors}
@@ -9,31 +11,38 @@ function buildBookDisplay(searchResult) {
 }
 
 function displaySearchResults(searchResults) {
-    const listParent = document.querySelector('#search-results');            
+    const resultsHeader= document.querySelector("#results-header");
 
-    searchResults.forEach(sr => {
-        const book = document.createElement("li");
-        const bookData = document.createElement("p");
-        const emptyParagraph = document.createElement("p");
-        const bookImage = document.createElement("img");
-        const learnMore = document.createElement("a");
+    if (searchResults.length === 0) {
+        resultsHeader.innerText = "This search did not return any results.";
+    } else {     
+        resultsHeader.innerText = "Search Results:";        
+        const listParent = document.querySelector('ul');            
 
-        bookData.innerText = buildBookDisplay(sr);
-        bookImage.setAttribute("src", sr.imageLinks.smallThumbnail); 
-        learnMore.setAttribute("href", sr.infoLink);
-        learnMore.setAttribute("target", "_blank");
-        learnMore.innerText = "Learn More";
+        searchResults.forEach(sr => {
+            const book = document.createElement("li");
+            const bookData = document.createElement("p");
+            const emptyParagraph = document.createElement("p");
+            const bookImage = document.createElement("img");
+            const learnMore = document.createElement("a");
 
-        book.appendChild(bookData);
-        book.appendChild(bookImage);
-        book.appendChild(emptyParagraph);
-        book.appendChild(learnMore);                
-        listParent.appendChild(book);
-    })
+            bookData.innerText = buildBookDisplay(sr);
+            bookImage.setAttribute("src", sr.imageLinks.smallThumbnail);
+            learnMore.setAttribute("href", sr.infoLink);
+            learnMore.setAttribute("target", "_blank");
+            learnMore.innerText = "Learn More";
+
+            book.appendChild(bookData);
+            book.appendChild(bookImage);
+            book.appendChild(emptyParagraph);
+            book.appendChild(learnMore);                
+            listParent.appendChild(book);
+        });   
+    }
 }
 
-function trimData(data) {
-    return data.map( b => b.volumeInfo);    
+function getVolumeInfo(data) {
+    return typeof(data) === "undefined" ? [] : data.map( b => b.volumeInfo );
 }
 
 function constructVolumesRequest(queryString) {
@@ -43,9 +52,10 @@ function constructVolumesRequest(queryString) {
 
 function fetchVolumes(searchText) {
     fetch(constructVolumesRequest(searchText))
-        .then(r => r.json())
-        .then(d => trimData(d.items))
-        .then(td => displaySearchResults(td));
+        .then( r => r.json() )
+        .then( d => getVolumeInfo(d.items) )
+        .then( td => displaySearchResults(td) )
+        .catch( e => console.log(e) );
 }
 
 function clearResults() {
