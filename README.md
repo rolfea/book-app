@@ -36,14 +36,26 @@ I am deploying this to Heroku. Since there isn't any backend stack to this at th
 
 ## Testing
 
-## Additional Features
+## Additional Work
 
-* When I click the "Additional Info" link, Then the link opens a new tab
+* ~~When I click the "Additional Info" link, Then the link opens a new tab~~
 
-* The Content should be centered on the page
+* ~~The Content should be centered on the page~~
+
+* ~~When my search returns no results, Then a message informs me of this~~
+
+* bug when no image available for a text (search for `these are the things`) get undefined error in console
+
+* ~~some horizontal line to distinguish between results~~
 
 * When I enter a search term and press the enter key on my keyboard, then the search executes
+
+* same as above - refactor "on click" to an event listener and pull that JS out into a separate file
 
 * Build unit tests around the JS
 
 * Make the JS more modular to improve testability and readability
+
+* When I search, I can select between author and title searches
+
+* Responsive Design considerations as I add styling
