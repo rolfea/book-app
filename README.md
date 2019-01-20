@@ -46,6 +46,8 @@ I am deploying this to Heroku. Since there isn't any backend stack to this at th
 
 * bug when no image available for a text (search for `these are the things`) get undefined error in console
 
+* Book images are inconsistent
+
 * ~~some horizontal line to distinguish between results~~
 
 * When I enter a search term and press the enter key on my keyboard, then the search executes

@@ -1,0 +1,24 @@
+{
+  "name": "books-app",
+  "version": "1.0.0",
+  "description": "Visit [here](https://rolfe-books-app.herokuapp.com/) to see the deployed version of this app.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolfea/book-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolfea/book-app/issues"
+  },
+  "homepage": "https://github.com/rolfea/book-app#readme",
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}
