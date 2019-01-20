@@ -2,10 +2,20 @@
 const baseURL = 'https://www.googleapis.com/books/v1/';
 
 function buildBookDisplay(searchResult) {
-  const publisher = searchResult.publisher === undefined ? 'Unavailable' : searchResult.publisher;  
+  const publisher = searchResult.publisher === undefined ? 'Unavailable' : searchResult.publisher;
   return `Author: ${searchResult.authors}
     Title: ${searchResult.title}
     Publishing Company: ${publisher}`;
+}
+
+function createBookImage(searchResult) {
+  const bookImage = document.createElement('img');
+  // eslint-disable-next-line prefer-destructuring
+  const imageLinks = searchResult.imageLinks;
+  const image = typeof (imageLinks) === 'undefined' ? './resources/default-book-image.jpg' : imageLinks.smallThumbnail;
+
+  bookImage.setAttribute('src', image);
+  return bookImage;
 }
 
 function displaySearchResults(searchResults) {
@@ -21,17 +31,15 @@ function displaySearchResults(searchResults) {
       const book = document.createElement('li');
       const bookData = document.createElement('p');
       const emptyParagraph = document.createElement('p');
-      const bookImage = document.createElement('img');
       const learnMore = document.createElement('a');
 
       bookData.innerText = buildBookDisplay(sr);
-      bookImage.setAttribute('src', sr.imageLinks.smallThumbnail);
       learnMore.setAttribute('href', sr.infoLink);
       learnMore.setAttribute('target', '_blank');
       learnMore.innerText = 'Learn More';
 
       book.appendChild(bookData);
-      book.appendChild(bookImage);
+      book.appendChild(createBookImage(sr));
       book.appendChild(emptyParagraph);
       book.appendChild(learnMore);
       listParent.appendChild(book);
@@ -63,6 +71,7 @@ function clearResults() {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 function search() {
   clearResults();
   const searchText = document.querySelector('input').value;
