@@ -44,17 +44,21 @@ I am deploying this to Heroku. Since there isn't any backend stack to this at th
 
 * ~~When my search returns no results, Then a message informs me of this~~
 
-* bug when no image available for a text (search for `these are the things`) get undefined error in console
+* ~~bug when no image available for a text (search for `these are the things`) get undefined error in console~~
+
+* ~~Book images are inconsistent~~
 
 * ~~some horizontal line to distinguish between results~~
 
-* When I enter a search term and press the enter key on my keyboard, then the search executes
+* JS Refactor
 
-* same as above - refactor "on click" to an event listener and pull that JS out into a separate file
+  * ~~When I enter a search term and press the enter key on my keyboard, then the search executes~~
 
-* Build unit tests around the JS
+  * ~~same as above - refactor "on click" to an event listener and pull that JS out into a separate file~~
 
-* Make the JS more modular to improve testability and readability
+  * Build unit tests around the JS
+
+* Better error handling
 
 * When I search, I can select between author and title searches
 
