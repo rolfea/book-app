@@ -56,7 +56,9 @@ I am deploying this to Heroku. Since there isn't any backend stack to this at th
 
   * ~~same as above - refactor "on click" to an event listener and pull that JS out into a separate file~~
 
-  * Build unit tests around the JS    
+  * Build unit tests around the JS
+
+* Better error handling
 
 * When I search, I can select between author and title searches
 
