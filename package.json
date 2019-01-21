@@ -4,6 +4,7 @@
   "description": "Visit [here](https://rolfe-books-app.herokuapp.com/) to see the deployed version of this app.",
   "main": "main.js",
   "scripts": {
+    "server": "http-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
