@@ -36,6 +36,8 @@ I am deploying this to Heroku. Since there isn't any backend stack to this at th
 
 ## Testing
 
+I initially thought I would set up Jest to run unit tests. I got as far as my first fetch request before realizing that Jest runs in Node (of course!) and can't use the Fetch API as a result. There are a couple work arounds, and maybe this is ultimately a smell of my code that it is so dependent on browser I/O to be tested, but for now I'm going to pursue setting up some basic E2E tests to at least get some functional validation up and running before I do any further work.
+
 ## Additional Work
 
 * ~~When I click the "Additional Info" link, Then the link opens a new tab~~
