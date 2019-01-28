@@ -46,7 +46,7 @@ function displaySearchResults(searchResults) {
   if (searchResults.length === 0) {
     resultsHeader.innerText = 'This search did not return any results.';
   } else {
-    resultsHeader.innerText = 'Search Results:';    
+    resultsHeader.innerText = 'Search Results:';
     buildResultsList(searchResults);
   }
 }
@@ -64,7 +64,7 @@ function fetchVolumes(searchText) {
   fetch(constructVolumesRequest(searchText))
     .then(r => r.json())
     .then(d => getVolumeInfo(d.items))
-    .then(td => displaySearchResults(td))
+    .then(sr => displaySearchResults(sr))
     .catch(e => console.log(e));
 }
 
