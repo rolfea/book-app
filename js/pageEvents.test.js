@@ -1,4 +1,4 @@
-test('it clicks the search button when the enter key is pressed', () => {
+test.skip('it clicks the search button when the enter key is pressed', () => {
   // document setup
   document.body.innerHTML = 
     '<h2>Enter your search term: </h2>' +
