@@ -11,7 +11,13 @@ npm run server
 
 Then navigate to `http://localhost:8080/home.html`
 
-## Requirements
+To run tests:
+
+```bash
+npm test
+```
+
+## Goal
 
 Create an application that allows you to use the Google Books API to search for books, and deploy it somewhere accessible through a web browser.
 
@@ -51,28 +57,4 @@ I initially thought I would set up Jest to run unit tests. I got as far as my fi
 
 ## Additional Work
 
-* ~~When I click the "Additional Info" link, Then the link opens a new tab~~
-
-* ~~The Content should be centered on the page~~
-
-* ~~When my search returns no results, Then a message informs me of this~~
-
-* ~~bug when no image available for a text (search for `these are the things`) get undefined error in console~~
-
-* ~~Book images are inconsistent~~
-
-* ~~some horizontal line to distinguish between results~~
-
-* JS Refactor
-
-  * ~~When I enter a search term and press the enter key on my keyboard, then the search executes~~
-
-  * ~~same as above - refactor "on click" to an event listener and pull that JS out into a separate file~~
-
-  * Build unit tests around the JS
-
-* Better error handling
-
-* When I search, I can select between author and title searches
-
-* Responsive Design considerations as I add styling
+Additional work is documented in the "Issues" section of the repository [here](https://github.com/rolfea/book-app/issues).
